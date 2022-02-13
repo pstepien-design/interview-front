@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { User } from '../../models/User';
 import { UserService } from '../../services/user.service';
 import { Select } from '@ngxs/store';
-import { UsersState } from 'src/app/states/reducer/users.reducer';
+import { UsersState } from 'src/app/states/reducers/users.reducer';
 
 @Component({
   selector: 'Users',

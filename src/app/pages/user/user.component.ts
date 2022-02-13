@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { ApiService } from '../../services/api.service';
 import { UserService } from '../../services/user.service';
 import { Select } from '@ngxs/store';
-import { FavouriteUsersState } from 'src/app/states/reducer/favUser.reducer';
+import { FavouriteUsersState } from 'src/app/states/reducers/favUser.reducer';
 
 @Component({
   selector: 'app-user',

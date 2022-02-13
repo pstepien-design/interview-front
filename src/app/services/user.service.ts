@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+// import model
 import { User } from '../models/User';
+//import services
+import { ApiService } from './api.service';
+// import ngxs an rxjs
+import { Observable } from 'rxjs';
 import { Store } from '@ngxs/store';
+
+//import states
 import {
   AddFavouriteUser,
   RemoveFavouriteUser,
 } from '../states/actions/favUser.actions';
 import { UpdateUsers } from '../states/actions/users.actions';
-import { ApiService } from './api.service';
-import { ActivatedRoute } from '@angular/router';
-import { UsersState } from '../states/reducer/users.reducer';
-import { FavouriteUsersState } from '../states/reducer/favUser.reducer';
-
+import { UsersState } from '../states/reducers/users.reducer';
+import { FavouriteUsersState } from '../states/reducers/favUser.reducer';
 
 @Injectable({
   providedIn: 'root',
@@ -47,7 +51,6 @@ export class UserService {
   public removeFavouriteUsers(user: User): void {
     this.store.dispatch(new RemoveFavouriteUser(user));
   }
-
 
   public loadUsers(): void {
     const savedUsers: User[] = this.store.selectSnapshot(

@@ -12,15 +12,14 @@ import { FavouriteUserComponent } from './pages/favourite-user/favourite-user.co
 import { FooterComponent } from './components/footer/footer.component';
 import { UserComponent } from './pages/user/user.component';
 //states
-import { UsersState } from './states/reducer/users.reducer';
-import { FavouriteUsersState } from './states/reducer/favUser.reducer';
+import { UsersState } from './states/reducers/users.reducer';
+import { FavouriteUsersState } from './states/reducers/favUser.reducer';
 //external imports
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     NgxsStoragePluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     BrowserAnimationsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent],

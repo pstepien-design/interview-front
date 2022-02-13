@@ -1,5 +1,7 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
+
 import { User } from '../../models/User';
+
 import { UpdateUsers } from '../actions/users.actions';
 
 export interface UsersStateModel {
@@ -14,7 +16,10 @@ export interface UsersStateModel {
 })
 export class UsersState {
   @Action(UpdateUsers)
-  getUsers({ setState }: StateContext<UsersStateModel>, { payload }: UpdateUsers) {
+  getUsers(
+    { setState }: StateContext<UsersStateModel>,
+    { payload }: UpdateUsers
+  ) {
     setState({
       users: payload,
     });

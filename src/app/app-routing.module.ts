@@ -1,10 +1,12 @@
+//angular imports
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+//copmponents imports
 import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './pages/user/user.component';
 import { FavouriteUserComponent } from './pages/favourite-user/favourite-user.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

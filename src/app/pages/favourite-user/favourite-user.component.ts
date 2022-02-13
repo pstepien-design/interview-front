@@ -3,7 +3,7 @@ import { User } from '../../models/User';
 import { Observable } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import { Select } from '@ngxs/store';
-import { FavouriteUsersState } from 'src/app/states/reducer/favUser.reducer';
+import { FavouriteUsersState } from 'src/app/states/reducers/favUser.reducer';
 
 @Component({
   selector: 'app-favourite-user',

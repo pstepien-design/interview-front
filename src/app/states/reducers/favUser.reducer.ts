@@ -1,5 +1,7 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
+
 import { User } from '../../models/User';
+
 import {
   AddFavouriteUser,
   RemoveFavouriteUser,
