@@ -1,0 +1,19 @@
+@import "/src/variables";
+.navbar {
+  background-color: $grey-transparent-color !important;
+  color:$grey-transparent-color; 
+  display: flex;
+  justify-content:right;
+}
+.nav-link {
+  font-size: 2rem;  
+  display:flex;
+  justify-content:right;
+  color:$grey-transparent-color;
+  // margin-left: 3rem;
+  // margin-right: 3rem;
+}
+.container-fluid{
+  display: flex;
+  justify-content:right;
+}

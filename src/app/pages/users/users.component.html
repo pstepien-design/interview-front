@@ -1,0 +1,62 @@
+<div class=" container users">
+  <div class="grid" *ngIf="(fetchedUsers$ | async)?.length !== 0">
+    <ng-container *ngFor="let user of fetchedUsers$ | async">
+      <div class="card">
+        <img
+          class="userPhoto"
+          src="assets/images/person.jpg"
+          alt="user symbol"
+        />
+        <div class="card-body">
+          <div class="row">
+            <div class="col col-l">
+              <p>Name:</p>
+            </div>
+            <div class="col col-r">
+              {{ user.name }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>Username:</p>
+            </div>
+            <div class="col col-r">
+              {{ user.username }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>Email:</p>
+            </div>
+            <div class="col col-r">
+              {{ user.email }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>Company:</p>
+            </div>
+            <div class="col col-r">
+              {{ user.company.name }}
+            </div>
+          </div>
+        </div>
+        <a
+          href="/users/{{ user.id }}"
+          class="btn btn-primary btn__details"
+          tabindex="-1"
+          role="button"
+        >
+          See more details</a
+        >
+      </div>
+    </ng-container>
+  </div>
+  </div>
+  <div class="users__notFound" *ngIf="(fetchedUsers$ | async)?.length == 0">
+    Users were not found!
+  </div>
+

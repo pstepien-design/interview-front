@@ -1,0 +1,14 @@
+@import "/src/variables";
+.home__container {
+  background-color: $grey-transparent-color;
+
+}
+
+.welcome__header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+transform: translateX(-50%) translateY(-50%);
+  color: $white-color;
+  text-align: center;
+}

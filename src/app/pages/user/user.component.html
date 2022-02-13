@@ -1,0 +1,97 @@
+<div class="container user__container">
+  <div *ngIf="isLoaded">
+    <div *ngIf="foundUser">
+      <div class="row">
+        <div class="col-4 col__userPhoto">
+          <img src="/assets/images/person.jpg" alt="user's photo" />
+          <h1 class="title">
+            {{ foundUser.name }}
+            <br />
+            Username: {{ foundUser.username }}
+          </h1>
+
+          <fa-icon
+            id="star"
+            class="faStar"
+            [ngClass]="{ faStar__liked: isUserFavourite(foundUser) }"
+            (click)="addUserToFavourite(foundUser)"
+            [icon]="['fas', 'star']"
+            size="3x"
+          ></fa-icon>
+        </div>
+        <div class="col-8 col__userInfo">
+          <div class="row">
+            <h1>DETAILS ABOUT THE USER</h1>
+          </div>
+          <div class="row">
+            <div class="col col-l">
+              <p>Email:</p>
+            </div>
+            <div class="col col-r">
+              {{ foundUser.email }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>Phone:</p>
+            </div>
+            <div class="col col-r">
+              {{ foundUser.phone }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>Website:</p>
+            </div>
+            <div class="col col-r">
+              {{ foundUser.website }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>Company:</p>
+            </div>
+            <div class="col col-r">
+              {{ foundUser.company.name }}
+            </div>
+          </div>
+          <div class="row text--address">ADDRESS</div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>Street:</p>
+            </div>
+            <div class="col col-r">
+              {{ foundUser.address.street }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>City:</p>
+            </div>
+            <div class="col col-r">
+              {{ foundUser.address.city }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-l">
+              <p>ZipCode:</p>
+            </div>
+            <div class="col col-r">
+              {{ foundUser.address.zipcode }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="user__notFound" *ngIf="(!foundUser)">
+      User not found
+    </div>
+  </div>
+  <div class="user__loading" *ngIf="isLoaded === false">Loading...</div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+  <table class="table" aria-describedby="List of favourite users">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Website</th>
+        <th scope="col">Company</th>
+        <th scope="col">Address</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of favouriteUsers$ | async">
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.website }}</td>
+        <td>{{ user.company.name }}</td>
+        <td>
+          <tr>
+            Street:
+            {{
+              user.address.street
+            }}
+          </tr>
+          <tr>
+            City:
+            {{
+              user.address.city
+            }}
+          </tr>
+          <tr>
+            ZipCode:
+            {{
+              user.address.zipcode
+            }}
+          </tr>
+        </td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="removeFavouriteUsers(user)"
+          >
+            Remove user from favourite
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
